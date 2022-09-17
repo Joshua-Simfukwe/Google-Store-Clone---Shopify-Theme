@@ -145,8 +145,8 @@
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo": "{{ shop.brand.logo }}",
-          "logo_width": 90,
+          "logo": "shopify:\/\/shop_images\/google-logo-icon-PNG-Transparent-Background.png",
+          "logo_width": 50,
           "logo_position": "middle-left",
           "menu": "main-menu",
           "menu_type_desktop": "dropdown",
@@ -215,7 +215,10 @@
           "color_scheme": "background-1"
         }
       }
-    }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
