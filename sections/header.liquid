@@ -195,7 +195,7 @@
                           <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
                             {% assign linkTitle = link.title | replace: " ", "-" %}
                             {% assign collectionImgUrl = collections[linkTitle] | image_url: width: 50, height: 50 %}
-                            {% if collectionImgUrl !=  false %}
+                            {% if collectionImgUrl ==  false %}
                               {{ collections[linkTitle] | image_url: width: 50, height: 50 | image_tag }}
                               {{ link.title | escape | upcase }}
                             {% else %}
