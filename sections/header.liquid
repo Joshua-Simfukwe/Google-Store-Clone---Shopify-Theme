@@ -144,18 +144,7 @@
                         {%- if link.links != blank -%}
                           <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                             <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
-                              <div class="css-nwk9gm">
-                                <div class="e1jjwn40 css-14cxo8a">
-                                    <img
-                                      class="css-1q0mskh"
-                                      src= { liu | downcase | img_url }}
-                                      height="48" 
-                                      width="48" 
-                                      loading="lazy" 
-                                      alt="Formal Shirts">
-                                </div>
-                              </div>
-                             
+                              {{ link.title | escape }}
                               {% render 'icon-arrow' %}
                               {% render 'icon-caret' %}
                             </summary>
