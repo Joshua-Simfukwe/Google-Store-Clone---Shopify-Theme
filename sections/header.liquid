@@ -196,7 +196,7 @@
                             {% assign linkTitle = link.title | replace: " ", "-" %}
                             {% assign collectionImgUrl = collections[linkTitle] | image_url: width: 50, height: 50 %}
                             {% if collectionImgUrl !=  false %}
-                              {{ collectionImgUrl | image_tag }}
+                              {{ collections[linkTitle] | image_url: width: 50, height: 50 | image_tag }}
                               {{ link.title | escape | upcase }}
                             {% else %}
                               {{ link.title | escape }}
