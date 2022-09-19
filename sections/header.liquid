@@ -194,7 +194,7 @@
                         {%- else -%}
                           <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
                             {% assign my_variable = link.title | replace: " ", "-" %}
-                            {{ collections[my_variable] | image_url: width: 50, height: 50 | image_tag }}
+                            {{ collections[my_variable] | image_url: width: 50, height: 50 }}
                             {{ link.title | escape | upcase }}
                           </a>
                         {%- endif -%}
