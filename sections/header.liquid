@@ -195,6 +195,15 @@
                           </details>
                         {%- else -%}
                           <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                            {%- if link.type == "collection_link" -%}
+                              {%- if link.object.image -%}
+                                {{ link.object.image | image_url: width:50, height:50 |image_tag }}
+                              {%- endif -%}
+                            {% elsif link.type == "product_link" %}
+                              {%- if link.object.featured_image -%}
+                                {{ link.object.featured_image | image_url: width:50, height:50 |image_tag }}
+                              {%- endif -%}
+                            {%- endif -%}
                             {{ link.title | escape |upcase }} 
                           </a>
                         {%- endif -%}
@@ -485,16 +494,6 @@
                   </header-menu>
                 {%- else -%}
                   <a href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
-                    
-                    {%- if link.type == "collection_link" -%}
-                      {%- if link.object.image -%}
-                        {{ link.object.image | image_url: width:50, height:50 |image_tag }}
-                      {%- endif -%}
-                    {% elsif link.type == "product_link" %}
-                        {%- if link.object.featured_image -%}
-                          {{ link.object.featured_image | image_url: width:50, height:50 |image_tag }}
-                        {%- endif -%}
-                    {%- endif -%}
                     <span {%- if link.current %} class="header__active-menu-item"{% endif %}>
                       {{ link.title | escape }}
                     </span>
