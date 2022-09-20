@@ -485,7 +485,19 @@
                   </header-menu>
                 {%- else -%}
                   <a href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
-                    <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                    
+                    {%- if link.type == "collection_link" -%}
+                      {%- if link.object.image -%}
+                        {{ link.object.image | image_url: width:50, height:50 |image_tag }}
+                      {%- endif -%}
+                    {% elsif link.type == "product_link" %}
+                        {%- if link.object.featured_image -%}
+                          {{ link.object.featured_image | image_url: width:50, height:50 |image_tag }}
+                        {%- endif -%}
+                    {%- endif -%}
+                    <span {%- if link.current %} class="header__active-menu-item"{% endif %}>
+                      {{ link.title | escape }}
+                    </span>
                   </a>
                 {%- endif -%}
               </li>
