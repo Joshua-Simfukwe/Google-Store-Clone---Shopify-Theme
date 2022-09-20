@@ -195,10 +195,13 @@
                           </details>
                         {%- else -%}
                           <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
-                            {%- assign linkTitle = link.title | replace: " ", "-" -%} 
-                            {{ link.object }}
-                            {%- if collections[linkTitle].image -%}
-                              {{ collections[linkTitle].image | image_url: width:50, height:50 |image_tag }} 
+                            {%- if link.type == collection_link -%}
+                              {%- assign linkTitle = link.title | replace: " ", "-" -%}
+                              {%- if collections[linkTitle].image -%}
+                                {{ collections[linkTitle].image | image_url: width:50, height:50 |image_tag }}
+                              {%- else -%}
+                                 {{ link.title | escape }}
+                              {%- endif -%}
                             {%- endif -%}
                             {{ link.title | escape }} 
                           </a>
