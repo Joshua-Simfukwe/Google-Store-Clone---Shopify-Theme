@@ -200,6 +200,10 @@
                               {%- if collections[linkTitle].image -%}
                                 {{ collections[linkTitle].image | image_url: width:50, height:50 |image_tag }}
                               {%- endif -%}
+                            {% elsif link.type == "product_link" %}
+                              {%- if link.object.featured_image -%}
+                                {{ link.object.featured_image | image_url: width:50, height:50 |image_tag }}
+                              {%- endif -%}
                             {%- endif -%}
                             {{ link.title | escape |upcase }} 
                           </a>
