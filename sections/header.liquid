@@ -143,8 +143,10 @@
                         {%- if link.links != blank -%}
                           <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                             <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
-                              {{ collections[link.title] | image_url: width: 50, height: 50 | image_tag }}
-                              {{ collections[link.title].title | upcase }}
+                              {%- assign linkTitle = link.title | replace: " ", "-" -%}
+                              {%- if collections[linkTitle].image -%}
+                                {{ collections[linkTitle].image | image_url: width:50, height:50 |image_tag }} 
+                              {%- endif -%}
                               {% render 'icon-arrow' %}
                               {% render 'icon-caret' %}
                             </summary>
@@ -193,7 +195,6 @@
                           </details>
                         {%- else -%}
                           <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
-                          {%- assign linkTitle = link.title | replace: " ", "-" -%}
                             {%- if collections[linkTitle].image -%}
                               {{ collections[linkTitle].image | image_url: width:50, height:50 |image_tag }} 
                             {%- endif -%}
