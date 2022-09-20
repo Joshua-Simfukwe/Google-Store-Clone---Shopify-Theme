@@ -200,8 +200,6 @@
                               {%- assign linkTitle = link.title | replace: " ", "-" -%}
                               {%- if collections[linkTitle].image -%}
                                 {{ collections[linkTitle].image | image_url: width:50, height:50 |image_tag }}
-                              {%- else -%}
-                                 {{ link.title | escape }}
                               {%- endif -%}
                             {%- endif -%}
                             {{ link.title | escape |upcase }} 
