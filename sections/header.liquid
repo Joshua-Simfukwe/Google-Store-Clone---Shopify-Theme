@@ -195,7 +195,22 @@
                           <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
                             {% assign linkTitle = link.title | replace: " ", "-" %}
                             {% assign collectionImgUrl = collections[linkTitle].image %}
-                            {{ collectionImgUrl }}
+                            {% case collectionImgUrl.type %}
+                              {% when String %}
+                                String
+                              {% when Number %}
+                                Number
+                              {% when Boolean %}
+                                Boolean
+                              {% when Nil %}
+                                Nil
+                              {% when Array %}
+                                second_expression
+                              {% when EmptyDrop %}
+                                EmptyDrop
+                              {% else %}
+                                third_expression
+                            {% endcase %}
                             {{ link.title | escape }} 
                           </a>
                         {%- endif -%}
