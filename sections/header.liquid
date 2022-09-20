@@ -194,6 +194,7 @@
                         {%- else -%}
                           <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
                             {% assign linkTitle = link.title | replace: " ", "-" %}
+                            {{ collections[linkTitle].image }}
                             {% case collections[linkTitle].image %}
                               {% when String %}
                                 String
