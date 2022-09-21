@@ -150,7 +150,7 @@
                                   {%- endif -%}
                                 {% elsif link.type == "product_link" %}
                                   {%- if link.object.featured_image -%}
-                                    {{ link.object.featured_image | image_url: width:50, height:50 |image_tag }}
+                                    {{ link.object.featured_image | image_url: width:30, height:30 |image_tag }}
                                   {%- endif -%}
                                 {%- endif -%}
                               {%- endif -%}
@@ -206,11 +206,11 @@
                             {% if section.settings.show_image_mobile_menu_links %}
                               {%- if link.type == "collection_link" -%}
                                 {%- if link.object.image -%}
-                                  {{ link.object.image | image_url: width:50, height:50 |image_tag }}
+                                  {{ link.object.image | image_url: width:30, height:30 |image_tag }}
                                 {%- endif -%}
                               {% elsif link.type == "product_link" %}
                                 {%- if link.object.featured_image -%}
-                                  {{ link.object.featured_image | image_url: width:50, height:50 |image_tag }}
+                                  {{ link.object.featured_image | image_url: width:30, height:30 |image_tag }}
                                 {%- endif -%}
                               {%- endif -%}
                             {%- endif -%}
