@@ -36,6 +36,11 @@
     max-width: {{ section.settings.logo_width }}px;
   }
 
+  .menu-drawer__image { 
+    margin-right: {{ section.settings.logo_width }}px;
+    margin-left:{{ section.settings.logo_width }}px;
+  }
+
   @media screen and (min-width: 990px) {
     header-drawer {
       display: none;
@@ -146,11 +151,15 @@
                               {% if section.settings.show_image_mobile_menu_links %}
                                 {%- if link.type == "collection_link" -%}
                                   {%- if link.object.image -%}
-                                    {{ link.object.image | image_url: width:30, height:30 |image_tag }}
+                                    <span class ="menu-drawer__image">
+                                      {{ link.object.image | image_url: width:30, height:30 |image_tag }}
+                                    </span>
                                   {%- endif -%}
                                 {% elsif link.type == "product_link" %}
                                   {%- if link.object.featured_image -%}
-                                    {{ link.object.featured_image | image_url: width:30, height:30 |image_tag }}
+                                    <span class ="menu-drawer__image">
+                                      {{ link.object.featured_image | image_url: width:30, height:30 |image_tag }}
+                                    </span>
                                   {%- endif -%}
                                 {%- endif -%}
                               {%- endif -%}
@@ -206,11 +215,15 @@
                             {% if section.settings.show_image_mobile_menu_links %}
                               {%- if link.type == "collection_link" -%}
                                 {%- if link.object.image -%}
-                                  {{ link.object.image | image_url: width:30, height:30 |image_tag }}
+                                  <span class ="menu-drawer__image">
+                                    {{ link.object.image | image_url: width:30, height:30 |image_tag }}
+                                  </span>
                                 {%- endif -%}
                               {% elsif link.type == "product_link" %}
                                 {%- if link.object.featured_image -%}
-                                  {{ link.object.featured_image | image_url: width:30, height:30 |image_tag }}
+                                  <span class ="menu-drawer__image"> 
+                                    {{ link.object.featured_image | image_url: width:30, height:30 |image_tag }}
+                                  </span>
                                 {%- endif -%}
                               {%- endif -%}
                             {%- endif -%}
@@ -959,6 +972,16 @@
       "default": true,
       "label": "Show images for mobile menu links",
       "info": "This will show images beside the link when you toggle the hammburger menu. Only for collecitons and products links"
+    },
+      {
+      "type": "range",
+      "id": "menu-drawer_image_margin-right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 100,
+      "unit": "px",
+      "label": "Menu drawer image margin right"
     }
   ]
 }
