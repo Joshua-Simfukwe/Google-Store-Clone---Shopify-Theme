@@ -156,7 +156,11 @@
           "margin_bottom": 0,
           "padding_top": 12,
           "padding_bottom": 12,
-          "show_image_mobile_menu_links": true
+          "padding_right": 32,
+          "padding_left": 36,
+          "show_image_mobile_menu_links": true,
+          "menu-drawer_image_margin-right": 24,
+          "menu-drawer_image_margin-left": 24
         }
       },
       "footer": {
