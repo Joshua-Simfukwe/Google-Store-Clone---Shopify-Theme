@@ -362,7 +362,9 @@
       "padding": {
         "section_padding_heading": "Section padding",
         "padding_top": "Top padding",
-        "padding_bottom": "Bottom padding"
+        "padding_bottom": "Bottom padding",
+        "padding_right": "Right padding",
+        "padding_left": "Left padding"
       },
       "spacing": "Spacing",
       "colors": {
