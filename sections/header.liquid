@@ -91,6 +91,8 @@
   .header {
     padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px;
+    padding-right: {{ section.settings.padding_right | times: 0.5 | round: 0 }}px;
+    padding-left: {{ section.settings.padding_left | times: 0.5 | round: 0 }}px;
   }
 
   .section-header {
@@ -967,6 +969,26 @@
       "default": 20
     },
       {
+      "type": "range",
+      "id": "padding_right",
+      "min": 0,
+      "max": 36,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_right",
+      "default": 20
+    },
+        {
+      "type": "range",
+      "id": "padding_left",
+      "min": 0,
+      "max": 36,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_left",
+      "default": 20
+    },
+     {
       "type": "checkbox",
       "id": "show_image_mobile_menu_links",
       "default": true,
