@@ -37,8 +37,8 @@
   }
 
   .menu-drawer__image img { 
-    max-width: {{ menu-drawer_image_margin-right }}px;
-    margin-left:{{ section.settings.logo_width }}px;
+    margin-right: {{ menu-drawer_image_margin-right }}px;
+    margin-left:{{ menu-drawer_image_margin-left }}px;
   }
 
   @media screen and (min-width: 990px) {
@@ -977,9 +977,19 @@
       "type": "range",
       "id": "menu-drawer_image_margin-right",
       "min": 0,
-      "max": 200,
-      "step": 2,
-      "default": 100,
+      "max": 100,
+      "step": 1,
+      "default": 24,
+      "unit": "px",
+      "label": "Menu drawer image margin right"
+    },
+      {
+      "type": "range",
+      "id": "menu-drawer_image_margin-left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 24,
       "unit": "px",
       "label": "Menu drawer image margin right"
     }
